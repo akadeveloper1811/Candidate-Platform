@@ -133,6 +133,35 @@
   font-size: inherit;
 }
 
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.filters input[type="text"],
+.filters input[type="checkbox"],
+.filters button {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  flex: 1;
+}
+
+.filters button {
+  background-color: green;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.filters button:hover {
+  background-color: darkgreen;
+}
+
 @media screen and (max-width: 768px) {
   .job-card {
     width: calc(50% - 20px);
