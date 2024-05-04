@@ -6,13 +6,13 @@ import JobListings from './components/JobList';
 
 const App = () => {
   const [filters, setFilters] = useState({
-    minExperience: '',
+    minExp: '',
     companyName: '',
     location: '',
     remote: false,
     techStack: '',
     role: '',
-    minBasePay: ''
+    minJdSalary: ''
   });
 
   const handleFilter = (newFilters) => {

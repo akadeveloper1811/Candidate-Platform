@@ -1,64 +1,99 @@
+/* styles.css */
+
+.job-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.job-card {
+  display: flex;
+  flex-direction: column; 
+  width: calc(28%);
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.job-card:hover {
+  transform: translateY(-5px);
+}
+
+.apply-button {
+  margin-top: 20px;
+  background-color: green;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.apply-button:hover {
+  transform: translateY(-3px);
+}
+
+.expand-button {
+  margin-top: 10px;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo-and-details-container {
+  display: flex;
+  align-items: center;
+}
+
+.company-logo {
+  width: 50px;
+  height: auto;
+  margin-right: 10px;
+}
+
+.company-details h3,
+.company-details h4,
+.company-details h5 {
+  margin: 0; 
+}
+
+.description-container {
+  margin-top: 10px;
+}
+
+.job-details h4 {
+  margin-top: 0; 
+  margin-bottom: 5px; 
+}
+
+.job-details p {
+  margin: 0; 
+}
 
 
-  .job-list {
-    display: flex; 
-    flex-wrap: wrap;
-    justify-content: space-between; 
-    gap: 10px; 
-  }
-  
+.company-details h4 {
+  font-size: 1.2em;
+  margin-top: 5px;
+}
+.company-details h3{
+  font-size: inherit;
+}
+
+@media screen and (max-width: 768px) {
   .job-card {
-    width: calc(28%); 
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease; 
+    width: calc(50% - 20px);
   }
+}
 
-  .job-card:hover {
-    transform: translateY(-5px); 
+@media screen and (max-width: 480px) {
+  .job-card {
+    width: 100%;
   }
-
-  .apply-button {
-    margin-top: 20px;
-    background-color: green; 
-    color: #fff; 
-    border: none; 
-    border-radius: 5px; 
-    padding: 10px 20px;
-    cursor: pointer; 
-    transition: transform 0.3s ease; 
-  }
-  
-  .apply-button:hover {
-    transform: translateY(-3px); 
-  }
-  .expand-button {
-    margin-top: 10px;
-  }
-
-  .app {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .filters {
-    display: flex;
-    justify-content: space-between;
-    width: 80%;
-    margin-bottom: 20px;
-  }
-  
-  @media screen and (max-width: 768px) {
-    .job-card {
-      width: calc(50% - 20px);
-    }
-  }
-  
-  @media screen and (max-width: 480px) {
-    .job-card {
-      width: 100%;
-    }
-  }
+}

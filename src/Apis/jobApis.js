@@ -1,4 +1,3 @@
-// Updated fetchJobs function
 const API_URL = 'https://api.weekday.technology/adhoc/getSampleJdJSON';
 
 const fetchJobs = async (limit, offset) => {
@@ -21,8 +20,22 @@ const fetchJobs = async (limit, offset) => {
     const data = await response.json();
 
     if (response.ok) {
-      const jobs = data.jdList || []; // Extract jdList from response
-      const totalCount = data.totalCount || 0; // Extract totalCount from response
+      const jobs = data.jdList.map(job => ({
+        id: job.id,
+        title: job.title,
+        companyName: job.companyName,
+        location: job.location,
+        remote: job.remote,
+        techStack: job.techStack,
+        jobRole: job.jobRole,
+        jobDetailsFromCompany: job.jobDetailsFromCompany,
+        minBasePay: job.minBasePay,
+        minExp: job.minExp,
+        maxExp: job.maxExp,
+        logoUrl: job.logoUrl // Assuming the API provides logoUrl for each job
+      }));
+      
+      const totalCount = data.totalCount || 0;
       return { jobs, totalCount };
     } else {
       throw new Error(data.message || 'Failed to fetch jobs');
