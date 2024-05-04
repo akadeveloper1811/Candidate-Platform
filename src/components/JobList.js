@@ -19,6 +19,16 @@ const JobList = ({ filters }) => {
   }, [offset, filters]);
 
   
+  
+
+  const handleScroll = () => {
+    if (
+      window.innerHeight + document.documentElement.scrollTop + 20>=
+      document.documentElement.offsetHeight
+    ) {
+      setOffset(prevOffset => prevOffset + 10);
+    }
+  };
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
