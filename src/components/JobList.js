@@ -15,7 +15,7 @@ const JobList = ({ filters }) => {
         setJobs(allJobs);
       })
       .catch(error => console.error(error));
-  }, [offset, filters, jobs]); // Include 'jobs' in the dependency array
+  }, [offset, filters, jobs]); 
 
   const applyFilters = (jobs, filters) => {
     return jobs.filter(job => {

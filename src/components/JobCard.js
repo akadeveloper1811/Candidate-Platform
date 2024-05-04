@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import '../styles/styles.css';
-import JobDescription from './JobDescription'; // Import the modal component
+import JobDescription from './JobDescription';
 
 const JobCard = ({ job }) => {
-  const [modalOpen, setModalOpen] = useState(false); // State to manage modal visibility
+  const [modalOpen, setModalOpen] = useState(false);
 
   const openModal = () => {
     setModalOpen(true);
@@ -36,7 +36,7 @@ const JobCard = ({ job }) => {
         <p><strong>Experience required:</strong> {job.minExp ? `${job.minExp} - ${job.maxExp} years` : 'Freshers'}</p>
         <button className="apply-button">Apply</button>
       </div>
-      <JobDescription job={job} isOpen={modalOpen} onClose={closeModal} /> {/* Render the modal component */}
+      <JobDescription job={job} isOpen={modalOpen} onClose={closeModal} />
     </div>
   );
 };
