@@ -29,10 +29,12 @@ const fetchJobs = async (limit, offset) => {
         techStack: job.techStack,
         jobRole: job.jobRole,
         jobDetailsFromCompany: job.jobDetailsFromCompany,
-        minBasePay: job.minBasePay,
+        minJdSalary: job.minJdSalary,
+        maxJdSalary: job.maxJdSalary,
         minExp: job.minExp,
         maxExp: job.maxExp,
-        logoUrl: job.logoUrl // Assuming the API provides logoUrl for each job
+        jdLink: job.jdLink,
+        logoUrl: job.logoUrl
       }));
       
       const totalCount = data.totalCount || 0;

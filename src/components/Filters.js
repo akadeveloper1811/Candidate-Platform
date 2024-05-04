@@ -2,23 +2,23 @@
 import React, { useState } from 'react';
 
 const Filters = ({ onFilter }) => {
-  const [minExperience, setMinExperience] = useState('');
+  const [minExp, setMinExperience] = useState('');
   const [companyName, setCompanyName] = useState('');
   const [location, setLocation] = useState('');
   const [remote, setRemote] = useState(false);
   const [techStack, setTechStack] = useState('');
-  const [role, setRole] = useState('');
-  const [minBasePay, setMinBasePay] = useState('');
+  const [jobRole, setRole] = useState('');
+  const [minJdPay, setMinBasePay] = useState('');
 
   const handleFilter = () => {
     const filters = {
-      minExperience,
+      minExp,
       companyName,
       location,
       remote,
       techStack,
-      role,
-      minBasePay
+      jobRole,
+      minJdPay
     };
     onFilter(filters);
   };
@@ -27,7 +27,7 @@ const Filters = ({ onFilter }) => {
     <div className="filters">
       <input
         type="text"
-        value={minExperience}
+        value={minExp}
         placeholder="Min Experience"
         onChange={(e) => setMinExperience(e.target.value)}
       />
@@ -59,13 +59,13 @@ const Filters = ({ onFilter }) => {
       />
       <input
         type="text"
-        value={role}
+        value={jobRole}
         placeholder="Role"
         onChange={(e) => setRole(e.target.value)}
       />
       <input
         type="text"
-        value={minBasePay}
+        value={minJdPay}
         placeholder="Min Base Pay"
         onChange={(e) => setMinBasePay(e.target.value)}
       />

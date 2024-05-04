@@ -1,13 +1,16 @@
-// JobCard.js
-
 import React, { useState } from 'react';
 import '../styles/styles.css';
+import JobDescription from './JobDescription'; // Import the modal component
 
 const JobCard = ({ job }) => {
-  const [expanded, setExpanded] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false); // State to manage modal visibility
 
-  const toggleExpand = () => {
-    setExpanded(!expanded);
+  const openModal = () => {
+    setModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalOpen(false);
   };
 
   return (
@@ -24,15 +27,16 @@ const JobCard = ({ job }) => {
       </div>
       <div className="description-container">
         <p><strong>Description:</strong></p>
-        <p>{job.jobDetailsFromCompany ? (expanded ? job.jobDetailsFromCompany : `${job.jobDetailsFromCompany.substring(0, 200)}...`) : ''}</p>
-        {!expanded && job.jobDetailsFromCompany && (
-          <button onClick={toggleExpand} className="expand-button">
-            Read more
+        <p>{job.jobDetailsFromCompany ? `${job.jobDetailsFromCompany.substring(0, 200)}...` : ''}</p>
+        {job.jobDetailsFromCompany && (
+          <button onClick={openModal} className="expand-button">
+            Read more 
           </button>
         )}
-        <p><strong>Experience required:</strong> {job.minExp} - {job.maxExp} years</p>
+        <p><strong>Experience required:</strong> {job.minExp ? `${job.minExp} - ${job.maxExp} years` : 'Freshers'}</p>
         <button className="apply-button">Apply</button>
       </div>
+      <JobDescription job={job} isOpen={modalOpen} onClose={closeModal} /> {/* Render the modal component */}
     </div>
   );
 };
